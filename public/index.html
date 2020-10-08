@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Client</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="title" content="My Title" />
+    <meta name="description" content="My description" />
+
+    <!-- SEO / social media-->
+    <meta name="author" content="Molleindustria" />
+    <meta name="copyright" content="Molleindustria" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="My description" />
+    <meta name="keywords" content="Game,Art,Molleindustria,videogame" />
+
+    <meta property="og:image" content="" />
+    <meta property="og:title" content="My Title" />
+    <meta property="og:description" content="My description." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@likelikearcade" />
+    <meta name="twitter:title" content="My Title" />
+    <meta name="twitter:description" content="My description." />
+    <meta name="twitter:image" content="" />
+
+    <!-- load socket and the client -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js'></script>
+    <script defer src="client.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="content">
+        </div>
+
+        <div id="interface">
+
+            <div id="username-form">
+                <div class="username-message">What's your name?</div>
+                <form action="" onsubmit="return nameOk()">
+                    <input id="username-field" class="username-field" placeholder="username" maxlength="16"
+                        autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                </form>
+                <div id="username-error" class="username-error-message"></div>
+
+                <button class="username-button" type="button" onclick="nameOk();">JOIN</button>
+            </div>
+
+            <form id="talk-form" action="" onsubmit="return getTalkInput()" style="display: none;">
+                <input id="talk-field" class="talk-field" placeholder="TYPE HERE" maxlength="40" autocomplete="off" />
+                <!-- call the function below on button press-->
+                <button class="talk-button" type="button" onclick="getTalkInput();">TALK</button>
+            </form>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
